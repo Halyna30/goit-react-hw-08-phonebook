@@ -1,32 +1,33 @@
 import React from 'react';
-import user from './Components/Profile/user.json';
-import Profile from './Components/Profile';
+import { connect } from 'react-redux';
+import operations from './Redux/operations';
+import { getFilter } from './Redux/contacts-selectors';
+import { changeFilter } from './Redux/actions';
+import FormContacts from './components/FormContacts/FormContacts';
+import Filter from './components/Filter/Filter';
+import ListContacts from './components/ListContacts/ListContacts';
 
-import statisticalData from './Components/Statistics/statistical-data.json';
-import TitleStat from './Components/Statistics/TitleStat';
-import Statistics from './Components/Statistics/Statistics';
-
-import friends from './Components/FriendList/friends.json';
-import FriendList from './Components/FriendList';
-
-import transactions from './Components/Transaction-history/transactions.json';
-import TransactionHistory from './Components/Transaction-history';
-
-export default function App() {
+const App = ({ filter, onAddContact, onChangeFilter }) => {
   return (
     <>
-      <Profile
-        name={user.name}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
-      />
-      <TitleStat title="Upload stats">
-        <Statistics stats={statisticalData} />
-      </TitleStat>
-      <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />;
+      <h1 className="title">Phonebook</h1>
+      <FormContacts onSubmit={onAddContact} />
+
+      <h2 className="title">Contacts</h2>
+      <Filter value={filter} onChange={onChangeFilter} />
+
+      <ListContacts />
     </>
   );
-}
+};
+
+const mapStateToProps = state => ({
+  filter: getFilter(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  onAddContact: contact => dispatch(operations.addContact(contact)),
+  onChangeFilter: value => dispatch(changeFilter(value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
