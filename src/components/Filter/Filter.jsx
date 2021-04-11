@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { changeFilter } from '../../Redux/actions';
+import { changeFilter } from '../../Redux/contacts/actions';
 
 const Filter = ({ value, onChange }) => (
   <div className="container">

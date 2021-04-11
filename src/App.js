@@ -1,33 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import operations from './Redux/operations';
-import { getFilter } from './Redux/contacts-selectors';
-import { changeFilter } from './Redux/actions';
-import FormContacts from './components/FormContacts/FormContacts';
-import Filter from './components/Filter/Filter';
-import ListContacts from './components/ListContacts/ListContacts';
+import { Route, NavLink, Switch } from 'react-router-dom';
+import AppBar from './components/AppBar';
+import HomePage from './views/Homepage';
+import RegisterPage from './views/RegisterPage';
+import LoginPage from './views/LoginPage';
+import Contacts from './views/Contacts';
+import routes from './routes';
 
-const App = ({ filter, onAddContact, onChangeFilter }) => {
+const App = () => {
   return (
     <>
-      <h1 className="title">Phonebook</h1>
-      <FormContacts onSubmit={onAddContact} />
+      <AppBar />
 
-      <h2 className="title">Contacts</h2>
-      <Filter value={filter} onChange={onChangeFilter} />
-
-      <ListContacts />
+      <Switch>
+        <Route exact path={routes.home} component={HomePage} />
+        <Route exact path={routes.contacts} component={Contacts} />
+        <Route path={routes.register} component={RegisterPage} />
+        <Route path={routes.login} component={LoginPage} />
+      </Switch>
     </>
   );
 };
 
-const mapStateToProps = state => ({
-  filter: getFilter(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  onAddContact: contact => dispatch(operations.addContact(contact)),
-  onChangeFilter: value => dispatch(changeFilter(value)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

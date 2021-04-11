@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import operations from '../../Redux/operations';
+import operations from '../../Redux/contacts/operations';
 import ContactItem from '../ContactItem';
-import { getVisibleContacts } from '../../Redux/contacts-selectors';
+import { getVisibleContacts } from '../../Redux/contacts/contacts-selectors';
 import PropTypes from 'prop-types';
 
 const ListContacts = ({ contacts, onDelete, fetchContacts }) => {
-  useEffect(() => {
-    fetchContacts();
-  }, []);
+  // useEffect(() => {
+  //   fetchContacts();
+  // }, []);
 
   return (
     <ul className="container list">
