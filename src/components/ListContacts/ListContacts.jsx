@@ -6,9 +6,9 @@ import { getVisibleContacts } from '../../Redux/contacts/contacts-selectors';
 import PropTypes from 'prop-types';
 
 const ListContacts = ({ contacts, onDelete, fetchContacts }) => {
-  // useEffect(() => {
-  //   fetchContacts();
-  // }, []);
+  useEffect(() => {
+    fetchContacts();
+  }, []);
 
   return (
     <ul className="container list">

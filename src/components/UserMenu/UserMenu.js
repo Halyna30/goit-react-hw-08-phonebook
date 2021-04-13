@@ -1,4 +1,8 @@
 import defaultAvatar from './default-avatar.png';
+import { connect } from 'react-redux';
+import authSelectors from '../../Redux/auth/auth-selectors';
+import authOperations from '../../Redux/auth/auth-operation';
+import authOperation from '../../Redux/auth/auth-operation';
 
 const styles = {
   container: {
@@ -24,4 +28,13 @@ const UserMenu = ({ avatar, name, onLogout }) => (
   </div>
 );
 
-export default UserMenu;
+const mapStateToProps = state => ({
+  name: authSelectors.getUserName(state),
+  avatar: defaultAvatar,
+});
+
+const mapDispatchToProps = {
+  onLogout: authOperation.logOut,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserMenu);
