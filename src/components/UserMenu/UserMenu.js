@@ -1,7 +1,6 @@
 import defaultAvatar from './default-avatar.png';
 import { connect } from 'react-redux';
 import authSelectors from '../../Redux/auth/auth-selectors';
-import authOperations from '../../Redux/auth/auth-operation';
 import authOperation from '../../Redux/auth/auth-operation';
 
 const styles = {

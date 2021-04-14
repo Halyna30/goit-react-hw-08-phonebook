@@ -50,8 +50,11 @@ class FormContacts extends Component {
             type="text"
             name="name"
             value={name}
+            className={s.input}
             onChange={this.handleChange}
-            className="input"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+            required
           />
         </label>
         <label className="label">
@@ -61,7 +64,10 @@ class FormContacts extends Component {
             name="number"
             value={number}
             onChange={this.handleChange}
-            className="input"
+            className={s.input}
+            pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
+            title="Номер телефона должен состоять из 11-12 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
+            required
           />
         </label>
         <button
