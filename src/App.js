@@ -1,11 +1,14 @@
 import React, { useEffect, Suspense, lazy } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import authOperation from './Redux/auth/auth-operation';
 import { Route, Switch } from 'react-router-dom';
 import AppBar from './components/AppBar';
 import routes from './routes';
+import Footer from './components/Footer';
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const HomePage = lazy(() => import('./views/Homepage'));
 const Contacts = lazy(() => import('./views/Contacts'));
@@ -20,6 +23,7 @@ const App = ({ onGetCurrentUser }) => {
   return (
     <>
       <AppBar />
+      <CssBaseline />
       <Suspense fallback={<p>Loading...</p>}>
         <Switch>
           <Route exact path={routes.home} component={HomePage} />
@@ -43,12 +47,17 @@ const App = ({ onGetCurrentUser }) => {
           />
         </Switch>
       </Suspense>
+      <Footer />
     </>
   );
 };
 
 const mapDispatchToProps = {
   onGetCurrentUser: authOperation.getCurrentUser,
+};
+
+App.propTypes = {
+  onGetCurrentUser: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(App);

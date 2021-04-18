@@ -2,33 +2,27 @@ import defaultAvatar from './default-avatar.png';
 import { connect } from 'react-redux';
 import authSelectors from '../../Redux/auth/auth-selectors';
 import authOperation from '../../Redux/auth/auth-operation';
+import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
+import s from './UserMenu.module.scss';
 
-const styles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  avatar: {
-    marginRight: 4,
-  },
-  name: {
-    fontWeight: 700,
-    marginRight: 12,
-  },
-};
-
-const UserMenu = ({ avatar, name, onLogout }) => (
-  <div style={styles.container}>
-    <img src={avatar} alt="" width="32" style={styles.avatar} />
-    <span style={styles.name}>Welcome, {name}</span>
-    <button type="button" onClick={onLogout}>
+const UserMenu = ({ avatar, email, onLogout }) => (
+  <div style={s.container}>
+    <img src={avatar} alt="" width="32" style={s.avatar} />
+    <span style={s.name}>Welcome, {email}</span>
+    <Button
+      type="button"
+      onClick={onLogout}
+      variant="contained"
+      color="primary"
+    >
       Logout
-    </button>
+    </Button>
   </div>
 );
 
 const mapStateToProps = state => ({
-  name: authSelectors.getUserName(state),
+  email: authSelectors.getUserEmail(state),
   avatar: defaultAvatar,
 });
 
@@ -36,4 +30,8 @@ const mapDispatchToProps = {
   onLogout: authOperation.logOut,
 };
 
+UserMenu.propTypes = {
+  email: PropTypes.string.isRequired,
+  onLogout: PropTypes.func.isRequired,
+};
 export default connect(mapStateToProps, mapDispatchToProps)(UserMenu);

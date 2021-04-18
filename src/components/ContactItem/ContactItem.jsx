@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 
 const ContactItem = ({ contact, onDelete }) => {
   const { id, number, name } = contact;
@@ -11,9 +12,15 @@ const ContactItem = ({ contact, onDelete }) => {
       <p>
         {name}: {number}
       </p>
-      <button type="button" className="btn" onClick={() => handleDelete(id)}>
+      <Button
+        type="button"
+        className="btn"
+        onClick={() => handleDelete(id)}
+        variant="contained"
+        color="primary"
+      >
         Delete
-      </button>
+      </Button>
     </li>
   );
 };

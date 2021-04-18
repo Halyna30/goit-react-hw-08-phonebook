@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 
-import s from './FormContacts.module.css';
+import s from './FormContacts.module.scss';
 
 class FormContacts extends Component {
   static propTypes = {
@@ -70,13 +71,15 @@ class FormContacts extends Component {
             required
           />
         </label>
-        <button
+        <Button
           type="submit"
           disabled={name === '' || number === '' ? true : false}
           className="btn"
+          variant="contained"
+          color="primary"
         >
           Add contact
-        </button>
+        </Button>
       </form>
     );
   }
