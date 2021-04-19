@@ -14,7 +14,7 @@ ReactDOM.render(
     <Provider store={store.store}>
       <PersistGate loading="Загрузка" persistor={store.persistor}>
         <BrowserRouter>
-          <Container maxWidth="1200">
+          <Container>
             <App />
           </Container>
         </BrowserRouter>

@@ -1,10 +1,11 @@
-/* .link {
-  display: 'inline-block';
-  textdecoration: 'none';
-  padding: 12;
-  fontweight: 700;
-  color: '#2A363B';
+@import '../../styles/distributes.scss';
+
+.list {
+  @extend %list;
+}
+.link {
+  @extend %link;
 }
 .activeLink {
-  color: '#E84A5F';
-} */
+  color: #e84a5f;
+}

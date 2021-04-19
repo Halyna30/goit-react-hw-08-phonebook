@@ -7,9 +7,9 @@ import Button from '@material-ui/core/Button';
 import s from './UserMenu.module.scss';
 
 const UserMenu = ({ avatar, email, onLogout }) => (
-  <div style={s.container}>
-    <img src={avatar} alt="" width="32" style={s.avatar} />
-    <span style={s.name}>Welcome, {email}</span>
+  <div className={s.container}>
+    <img src={avatar} alt="" width="32" className={s.avatar} />
+    <span className={s.name}>Welcome, {email}</span>
     <Button
       type="button"
       onClick={onLogout}

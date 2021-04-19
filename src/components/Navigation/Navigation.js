@@ -2,12 +2,13 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import authSelectors from '../../Redux/auth/auth-selectors';
 import PropTypes from 'prop-types';
+import s from './Navigation.module.scss';
 import Toolbar from '@material-ui/core/Toolbar';
 
 const Navigation = ({ isAuthenticated }) => (
-  <ul>
+  <ul className={s.list}>
     <li>
-      <NavLink exact to="/" className="navLink" activeClassName="navLinkActive">
+      <NavLink exact to="/" className={s.link} activeClassName={s.activeLink}>
         Home
       </NavLink>
     </li>
@@ -15,8 +16,8 @@ const Navigation = ({ isAuthenticated }) => (
       <li>
         <NavLink
           to="/contacts"
-          className="navLink"
-          activeClassName="navLinkActive"
+          className={s.link}
+          activeClassName={s.activeLink}
         >
           Contacts
         </NavLink>
@@ -29,8 +30,8 @@ const mapStateToProps = state => ({
   isAuthenticated: authSelectors.getIsAuthenticated(state),
 });
 
-Navigation.propTypes = {
-  isAuthenticated: PropTypes.string,
-};
+// Navigation.propTypes = {
+//   isAuthenticated: PropTypes.string,
+// };
 
 export default connect(mapStateToProps)(Navigation);

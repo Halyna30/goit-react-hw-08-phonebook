@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import operations from '../Redux/contacts/operations';
-import { getFilter } from '../Redux/contacts/contacts-selectors';
-import { changeFilter } from '../Redux/contacts/actions';
-import FormContacts from '../components/FormContacts';
-import Filter from '../components/Filter';
-import ListContacts from '../components/ListContacts';
+import operations from '../../Redux/contacts/operations';
+import { getFilter } from '../../Redux/contacts/contacts-selectors';
+import { changeFilter } from '../../Redux/contacts/actions';
+import FormContacts from '../../components/FormContacts';
+import Filter from '../../components/Filter';
+import ListContacts from '../../components/ListContacts';
 
 const Contacts = ({ filter, onAddContact, onChangeFilter }) => {
   return (

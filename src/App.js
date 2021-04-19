@@ -10,8 +10,8 @@ import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-const HomePage = lazy(() => import('./views/Homepage'));
-const Contacts = lazy(() => import('./views/Contacts'));
+const HomePage = lazy(() => import('./views/HomePage'));
+const Contacts = lazy(() => import('./views/ContactsPage'));
 const RegisterPage = lazy(() => import('./views/RegisterPage'));
 const LoginPage = lazy(() => import('./views/LoginPage'));
 

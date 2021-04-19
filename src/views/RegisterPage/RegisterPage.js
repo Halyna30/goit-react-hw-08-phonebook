@@ -1,17 +1,9 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import authOperation from '../Redux/auth/auth-operation';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import authOperation from '../../Redux/auth/auth-operation';
+import Container from '../../components/Container';
+import s from './RegisterPage.module.scss';
+import Button from '@material-ui/core/Button';
 
 class RegisterPage extends Component {
   state = {
@@ -36,15 +28,15 @@ class RegisterPage extends Component {
     const { name, email, password } = this.state;
 
     return (
-      <div>
+      <Container>
         <h1>Registration page</h1>
 
         <form
           onSubmit={this.handleSubmit}
-          style={styles.form}
+          className={s.form}
           autoComplete="off"
         >
-          <label style={styles.label}>
+          <label className={s.label}>
             Name
             <input
               type="text"
@@ -54,7 +46,7 @@ class RegisterPage extends Component {
             />
           </label>
 
-          <label style={styles.label}>
+          <label className={s.label}>
             Email
             <input
               type="email"
@@ -64,7 +56,7 @@ class RegisterPage extends Component {
             />
           </label>
 
-          <label style={styles.label}>
+          <label className={s.label}>
             password
             <input
               type="password"
@@ -74,9 +66,11 @@ class RegisterPage extends Component {
             />
           </label>
 
-          <button type="submit">Register</button>
+          <Button type="submit" variant="contained" color="primary">
+            Register
+          </Button>
         </form>
-      </div>
+      </Container>
     );
   }
 }
