@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import authSelectors from '../../Redux/auth/auth-selectors';
 import PropTypes from 'prop-types';
 import s from './Navigation.module.scss';
-import Toolbar from '@material-ui/core/Toolbar';
 
 const Navigation = ({ isAuthenticated }) => (
   <ul className={s.list}>
@@ -30,8 +29,8 @@ const mapStateToProps = state => ({
   isAuthenticated: authSelectors.getIsAuthenticated(state),
 });
 
-// Navigation.propTypes = {
-//   isAuthenticated: PropTypes.string,
-// };
+Navigation.propTypes = {
+  isAuthenticated: PropTypes.string,
+};
 
 export default connect(mapStateToProps)(Navigation);

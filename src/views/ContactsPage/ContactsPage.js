@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import operations from '../../Redux/contacts/operations';
 import { getFilter } from '../../Redux/contacts/contacts-selectors';
 import { changeFilter } from '../../Redux/contacts/actions';
@@ -29,5 +30,11 @@ const mapDispatchToProps = dispatch => ({
   onAddContact: contact => dispatch(operations.addContact(contact)),
   onChangeFilter: value => dispatch(changeFilter(value)),
 });
+
+Contacts.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onAddContact: PropTypes.func.isRequired,
+  onChangeFilter: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);

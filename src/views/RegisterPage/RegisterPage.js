@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import authOperation from '../../Redux/auth/auth-operation';
 import Container from '../../components/Container';
+import PropTypes from 'prop-types';
 import s from './RegisterPage.module.scss';
 import Button from '@material-ui/core/Button';
 
@@ -77,6 +78,10 @@ class RegisterPage extends Component {
 
 const mapDispatchToProps = {
   onRegister: authOperation.register,
+};
+
+RegisterPage.propTypes = {
+  onRegister: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(RegisterPage);

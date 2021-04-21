@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import authOperation from '../../Redux/auth/auth-operation';
 import Container from '../../components/Container';
+import PropTypes from 'prop-types';
 import s from './LoginPage.module.scss';
 import Button from '@material-ui/core/Button';
 
@@ -68,6 +69,10 @@ class LoginPage extends Component {
 
 const mapDispatchToProps = {
   onLogin: authOperation.logIn,
+};
+
+LoginPage.propTypes = {
+  onLogin: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(LoginPage);
