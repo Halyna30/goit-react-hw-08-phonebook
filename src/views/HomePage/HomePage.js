@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import Container from '../../components/Container';
+import routes from '../../routes';
 import s from './HomePage.module.scss';
 
 const HomePage = () => (
@@ -6,9 +8,9 @@ const HomePage = () => (
     <Container>
       <h1 className={s.title}>
         Welcome to our service{' '}
-        <span role="img" aria-label="Welcome-icon">
-          💁‍♀️
-        </span>
+        <Link to={routes.login} className={s.link}>
+          log in
+        </Link>
       </h1>
     </Container>
   </section>

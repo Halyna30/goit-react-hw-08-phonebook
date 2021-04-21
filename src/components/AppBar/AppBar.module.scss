@@ -1,9 +1,8 @@
 @import '../../styles/distributes.scss';
 
 .header {
-  @extend %list;
   background-color: blue($color: #000000);
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 }

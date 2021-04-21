@@ -29,3 +29,13 @@
   font-size: 48px;
   text-align: center;
 }
+
+.link {
+  color: inherit;
+  font-weight: 700;
+
+  &:focus,
+  &:hover {
+    color: green;
+  }
+}

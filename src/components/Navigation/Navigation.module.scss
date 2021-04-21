@@ -2,6 +2,7 @@
 
 .list {
   @extend %list;
+  display: flex;
 }
 .link {
   @extend %link;

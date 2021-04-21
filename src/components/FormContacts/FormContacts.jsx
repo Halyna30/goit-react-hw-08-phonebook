@@ -45,7 +45,7 @@ class FormContacts extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} className={s.form}>
-        <label className="label">
+        <label className={s.label}>
           Name
           <input
             type="text"
@@ -58,7 +58,7 @@ class FormContacts extends Component {
             required
           />
         </label>
-        <label className="label">
+        <label className={s.label}>
           Phone Number
           <input
             type="tel"
@@ -74,7 +74,7 @@ class FormContacts extends Component {
         <Button
           type="submit"
           disabled={name === '' || number === '' ? true : false}
-          className="btn"
+          className={s.btn}
           variant="contained"
           color="primary"
         >

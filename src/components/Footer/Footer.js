@@ -11,13 +11,13 @@ const Footer = () => (
       <Typography variant="body1">
         <p className={s.text}>
           Developed by
-          <span className={s.developerName}> Halyna Pryn</span>
+          <span className={s.name}> Halyna Pryn</span>
         </p>
         <a
           href="mailto:prynhalyna@gmail.com"
           target="blank"
           aria-label="Link to email"
-          className={s.developerLink}
+          className={s.linkEmail}
         >
           <EmailIcon />
         </a>
@@ -26,7 +26,7 @@ const Footer = () => (
           target="_blank"
           aria-label="Link to LinkedIn"
           rel="noreferrer"
-          className={s.developerLink}
+          className={s.linkLinkedin}
         >
           <LinkedInIcon />
         </a>
@@ -35,7 +35,7 @@ const Footer = () => (
           target="_blank"
           aria-label="Link to GitHub"
           rel="noreferrer"
-          className={s.developerLink}
+          className={s.linkGitHub}
         >
           <GitHubIcon />
         </a>
