@@ -22,7 +22,7 @@ const Footer = () => (
           <EmailIcon />
         </a>
         <a
-          href="https://www.linkedin.com/in/nataliia-lazorenko-6a5b22152/"
+          href="https://pl.linkedin.com/in/halyna-pryn-41aa36207"
           target="_blank"
           aria-label="Link to LinkedIn"
           rel="noreferrer"
