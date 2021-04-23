@@ -44,6 +44,7 @@ class LoginPage extends Component {
                 name="email"
                 value={email}
                 onChange={this.handleChange}
+                autocomplete="off"
               />
             </label>
 
@@ -54,6 +55,7 @@ class LoginPage extends Component {
                 name="password"
                 value={password}
                 onChange={this.handleChange}
+                autocomplete="off"
               />
             </label>
 
