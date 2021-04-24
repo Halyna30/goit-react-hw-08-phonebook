@@ -44,7 +44,6 @@ class RegisterPage extends Component {
               name="name"
               value={name}
               onChange={this.handleChange}
-              autocomplete="off"
             />
           </label>
 
@@ -55,7 +54,6 @@ class RegisterPage extends Component {
               name="email"
               value={email}
               onChange={this.handleChange}
-              autocomplete="off"
             />
           </label>
 
@@ -66,7 +64,6 @@ class RegisterPage extends Component {
               name="password"
               value={password}
               onChange={this.handleChange}
-              autocomplete="off"
             />
           </label>
 

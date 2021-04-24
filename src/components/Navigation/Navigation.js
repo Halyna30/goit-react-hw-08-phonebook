@@ -29,8 +29,8 @@ const mapStateToProps = state => ({
   isAuthenticated: authSelectors.getIsAuthenticated(state),
 });
 
-Navigation.propTypes = {
-  isAuthenticated: PropTypes.string,
-};
+// Navigation.propTypes = {
+//   isAuthenticated: PropTypes.string,
+// };
 
 export default connect(mapStateToProps)(Navigation);
